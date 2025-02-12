@@ -1,0 +1,66 @@
+.adminlogin {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /*background-image: url('tp.jpg');  Replace 'your-image-url.jpg' with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .adminlogin .login-container {
+    background-color: rgba(190, 209, 231, 0.8); /* Adjust the background color opacity */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Add a shadow effect */
+  }
+  
+  .adminlogin .login-form {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .adminlogin h2 {
+    margin-bottom: 30px;
+    color: #000000;
+  }
+  
+  .adminlogin .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .adminlogin label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #000000;
+  }
+  
+  .adminlogin input[type="text"],
+  .adminlogin input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .adminlogin button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .adminlogin button:hover {
+    background-color: #2980b9;
+  }
+  

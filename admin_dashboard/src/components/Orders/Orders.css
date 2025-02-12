@@ -1,0 +1,25 @@
+.paytotalMsg{
+    color: red;
+    font-weight: 900;
+    font-size: 20px;
+}
+.card--titles{
+    font-weight: 700;
+
+}
+.card--maintitle{
+    color: rgb(149, 74, 40);
+}
+.card-styles{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.card-styles:hover{
+    border: 1px solid rgb(110, 143, 3);
+    box-shadow: 4px 4px 10px rgb(110, 143, 3);
+}
+.card--description{
+    height: 30px;
+    overflow: scroll!important;
+}

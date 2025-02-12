@@ -1,0 +1,10 @@
+.barchart{
+    height: 300px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-top: 100px; */
+}
+.chtitle{
+    padding-top: 30px;
+}
