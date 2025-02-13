@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { Modal,ModalBody } from 'react-bootstrap';
 import AddCustomer from './AddCustomer';
 const Customers = () => {
-    const apiUrl = process.env.RENDER_API;
+    const apiUrl = process.env.REACT_APP_API_URL;
     const [data1, setdata] = useState([])
     const navigate = useNavigate();
     const [show, setShow] = useState(false);

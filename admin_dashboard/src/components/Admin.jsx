@@ -5,7 +5,7 @@ import { Button, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const Admin = () => {
-  const apiUrl = process.env.RENDER_API;
+  const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
   const [uname, setuname] = useState('');
   const [upass, setupass] = useState('');

@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
+ 
 root.render(
   <BrowserRouter>
     <React.StrictMode>

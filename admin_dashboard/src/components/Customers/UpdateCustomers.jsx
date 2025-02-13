@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const UpdateCustomers = () => {
     const localCustId = localStorage.getItem("custId");
     const [validated, setValidated] = useState(false);
-    const apiUrl = process.env.RENDER_API;
+    const apiUrl = process.env.REACT_APP_API_URL;
     const navigate = useNavigate();
     const [CustID, setCustID] = useState('');
     const [Password, setPassword] = useState('');

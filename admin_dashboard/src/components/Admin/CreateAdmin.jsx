@@ -32,7 +32,7 @@ const CreateAdmin = () => {
         }
 
         axios({
-            url:`${process.env.REACT_APP_BACKEND_LINK}/postcar`,
+            url:`${process.env.REACT_APP_API_URL}/postcar`,
             method:'POST',
             data:setdata,
             headers:{

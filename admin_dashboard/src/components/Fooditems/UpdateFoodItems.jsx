@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const UpdateFoodItems = () => {
     const ID = localStorage.getItem("ID");
     const [validated, setValidated] = useState(false);
-    const apiUrl = process.env.RENDER_API;
+    const apiUrl = process.env.REACT_APP_API_URL;
     const navigate = useNavigate();
     const [foodName, setfoodName] = useState('');
     const [foodid, setId] = useState('');

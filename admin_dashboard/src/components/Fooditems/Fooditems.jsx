@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Fooditems = () => {
-    const apiUrl = process.env.RENDER_API;
+    const apiUrl = process.env.REACT_APP_API_URL;
     const [validated, setValidated] = useState(false);
     const [foodName, setfoodName] = useState('');
     const [foodid, setId] = useState('');

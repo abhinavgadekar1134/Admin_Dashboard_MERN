@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Form, Col, Button, Container, Row } from 'react-bootstrap';
 import "./Orders.css"
 const OrderingFood = () => {
-    const apiUrl = process.env.RENDER_API;
+    const apiUrl = process.env.REACT_APP_API_URL;
     const ID = localStorage.getItem("ID");
     const [validated, setValidated] = useState(false);
 

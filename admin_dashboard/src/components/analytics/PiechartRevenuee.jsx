@@ -7,7 +7,7 @@ import { Pie } from 'react-chartjs-2';
 Chart.register(CategoryScale);
 
 const PiechartRevenuee = () => {
-  const apiUrl = process.env.RENDER_API;
+  const apiUrl = process.env.REACT_APP_API_URL;
   const data = {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
     datasets: [

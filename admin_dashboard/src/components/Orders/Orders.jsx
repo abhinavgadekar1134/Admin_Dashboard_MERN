@@ -23,11 +23,11 @@ const Orders = () => {
     const [CustomerName, setCustName] = useState('');
     const [Note, setnote] = useState('');
     const [OrderAddress, setOrderAddress] = useState('');
-
+    const apiUrl = process.env.REACT_APP_API_URL;
     const [FoodData, setFoodsData] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getfoodItems`)
+        axios.get(`${apiUrl}/getfoodItems`)
             .then(res => {
                 console.log(res.data)
                 setFoodsData(res.data.data)
@@ -59,7 +59,7 @@ const Orders = () => {
         }
 
         axios({
-            url: `http://localhost:8000/abc/postFoodItems`,
+            url: `${apiUrl}/postFoodItems`,
             method: 'POST',
             data: setdata,
             headers: {
@@ -82,7 +82,7 @@ const Orders = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getOrders`)
+        axios.get(`${apiUrl}/getOrders`)
             .then(res => {
                 console.log(res.data)
                 setdata(res.data.data)
@@ -95,7 +95,7 @@ const Orders = () => {
     }, [])
     const handleDelete = (FoodId) => {
 
-        axios.delete(`http://localhost:8000/abc/deleteOrders/${FoodId}`)
+        axios.delete(`${apiUrl}/deleteOrders/${FoodId}`)
             .then(res => {
                 console.log(res.data);
                 window.alert("data deleted");
@@ -238,7 +238,7 @@ const Orders = () => {
                         return (
                             <>
                                 <Card className='card-styles' style={{ width: '16rem',height:'auto' }}>
-                                    <Card.Img height={"200px"} variant="top" src={`http://localhost:8000/abc/` + ii.foodimg} />
+                                    <Card.Img height={"200px"} variant="top" src={`${apiUrl}` + ii.foodimg} />
                                     <Card.Body>
                                         <Card.Title ><span className='card--maintitle'>{ii.FoodName}</span></Card.Title>
                                         <Card.Text>

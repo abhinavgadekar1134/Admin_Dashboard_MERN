@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 const Dashboard = () => {
     const [date, setDate] = useState(new Date()); // Initialize state for selected date
-    const apiUrl = process.env.RENDER_API;
+    const apiUrl = process.env.REACT_APP_API_URL;
     const onChange = (newDate) => {
         setDate(newDate); // Update selected date when calendar date changes
     };
