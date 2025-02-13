@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const UpdateCustomers = () => {
     const localCustId = localStorage.getItem("custId");
     const [validated, setValidated] = useState(false);
-
+    const apiUrl = process.env.RENDER_API;
     const navigate = useNavigate();
     const [CustID, setCustID] = useState('');
     const [Password, setPassword] = useState('');
@@ -15,7 +15,7 @@ const UpdateCustomers = () => {
     const [Mail, setMail] = useState('');
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getCustomersById/${localCustId}`)
+        axios.get(`${apiUrl}/getCustomersById/${localCustId}`)
             .then(res => {
                 console.log(res.data);
                 setCustID(res.data.data.CustID);
@@ -42,7 +42,7 @@ const UpdateCustomers = () => {
 
         console.log(setdata)
         axios({
-            url: `http://localhost:8000/abc/CustUpdate/${localCustId}`,
+            url: `${apiUrl}/CustUpdate/${localCustId}`,
             method: 'PUT',
             data: setdata
         })

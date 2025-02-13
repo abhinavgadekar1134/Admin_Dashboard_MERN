@@ -8,6 +8,7 @@ import { Table } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 const AddCustomer = () => {
+    const apiUrl = process.env.RENDER_API;
     const [validated, setValidated] = useState(false);
     const [CustID, setCustID] = useState('');
     const [Password, setPassword] = useState('');
@@ -28,7 +29,7 @@ const AddCustomer = () => {
         }
 
         axios({
-            url: `http://localhost:8000/abc/postCustomers`,
+            url: `${apiUrl}/postCustomers`,
             method: 'POST',
             data: setdata
          

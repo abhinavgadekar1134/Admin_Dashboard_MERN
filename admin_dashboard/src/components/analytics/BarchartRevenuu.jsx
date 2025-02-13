@@ -4,7 +4,7 @@ import {CategoryScale} from 'chart.js';
 import Chart from 'chart.js/auto';
 import './BarchartRevenuu.css'
 const BarchartRevenuu = () => {
-    
+  const apiUrl = process.env.RENDER_API;
     const data = {
         labels: ['Pizza', 'Vada Pav', 'Pav Bhaji','Vada'],
         datasets: [

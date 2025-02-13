@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 const Dashboard = () => {
     const [date, setDate] = useState(new Date()); // Initialize state for selected date
-
+    const apiUrl = process.env.RENDER_API;
     const onChange = (newDate) => {
         setDate(newDate); // Update selected date when calendar date changes
     };
@@ -17,7 +17,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getfoodItems`)
+        axios.get(`${apiUrl}/getfoodItems`)
             .then(res => {
                 console.log(res.data)
                 setdata(res.data.data)

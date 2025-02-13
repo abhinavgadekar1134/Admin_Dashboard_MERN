@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { Modal,ModalBody } from 'react-bootstrap';
 import AddCustomer from './AddCustomer';
 const Customers = () => {
+    const apiUrl = process.env.RENDER_API;
     const [data1, setdata] = useState([])
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ const Customers = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getCustomers`)
+        axios.get(`${apiUrl}/getCustomers`)
             .then(res => {
                 console.log(res.data)
                 setdata(res.data.data)
@@ -30,7 +31,7 @@ const Customers = () => {
     }, [data1])
     const handleDelete = (CustID) => {
 
-        axios.delete(`http://localhost:8000/abc/deleteCustomers/${CustID}`)
+        axios.delete(`${apiUrl}/deleteCustomers/${CustID}`)
             .then(res => {
                 console.log(res.data);
                 window.alert("data deleted");

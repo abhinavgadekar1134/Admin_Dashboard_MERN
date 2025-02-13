@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Form, Col, Button, Container, Row } from 'react-bootstrap';
 import "./Orders.css"
 const OrderingFood = () => {
+    const apiUrl = process.env.RENDER_API;
     const ID = localStorage.getItem("ID");
     const [validated, setValidated] = useState(false);
 
@@ -26,7 +27,7 @@ const OrderingFood = () => {
     let TotalPrice = 0;
     let qu = 0;
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getFoodItemsById/${ID}`)
+        axios.get(`${apiUrl}/getFoodItemsById/${ID}`)
             .then(res => {
                 console.log(res.data);
                 setfoodName(res.data.data.FoodName);
@@ -64,7 +65,7 @@ const OrderingFood = () => {
         }
 
         axios({
-            url: `http://localhost:8000/abc/postOrder`,
+            url: `${apiUrl}/postOrder`,
             method: 'POST',
             data: setdata
 

@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Fooditems = () => {
+    const apiUrl = process.env.RENDER_API;
     const [validated, setValidated] = useState(false);
     const [foodName, setfoodName] = useState('');
     const [foodid, setId] = useState('');
@@ -33,7 +34,7 @@ const Fooditems = () => {
         }
 
         axios({
-            url: `http://localhost:8000/abc/postFoodItems`,
+            url: `${apiUrl}/postFoodItems`,
             method: 'POST',
             data: setdata,
             headers: {
@@ -56,7 +57,7 @@ const Fooditems = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getfoodItems`)
+        axios.get(`${apiUrl}/getfoodItems`)
             .then(res => {
                 console.log(res.data)
                 setdata(res.data.data)
@@ -69,7 +70,7 @@ const Fooditems = () => {
     }, [data1])
     const handleDelete = (FoodName) => {
 
-        axios.delete(`http://localhost:8000/abc/deleteFoodItems/${FoodName}`)
+        axios.delete(`${apiUrl}/deleteFoodItems/${FoodName}`)
             .then(res => {
                 console.log(res.data);
                 window.alert("data deleted");

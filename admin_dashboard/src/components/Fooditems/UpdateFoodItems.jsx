@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const UpdateFoodItems = () => {
     const ID = localStorage.getItem("ID");
     const [validated, setValidated] = useState(false);
-
+    const apiUrl = process.env.RENDER_API;
     const navigate = useNavigate();
     const [foodName, setfoodName] = useState('');
     const [foodid, setId] = useState('');
@@ -20,7 +20,7 @@ const UpdateFoodItems = () => {
     const [foodimg, setfoodimg] = useState('');
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getFoodItemsById/${ID}`)
+        axios.get(`${apiUrl}/getFoodItemsById/${ID}`)
             .then(res => {
                 console.log(res.data);
                 setfoodName(res.data.data.FoodName);
@@ -50,7 +50,7 @@ const UpdateFoodItems = () => {
 
         console.log(setdata)
         axios({
-            url: `http://localhost:8000/abc/FoodUpdate/${ID}`,
+            url: `${apiUrl}/FoodUpdate/${ID}`,
             method: 'PUT',
             data: setdata
             // headers: {

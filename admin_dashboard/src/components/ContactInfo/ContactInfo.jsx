@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { Modal,ModalBody } from 'react-bootstrap';
 
 const ContactInfo = () => {
+    const apiUrl = process.env.RENDER_API;
     const [data1, setdata] = useState([])
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ const ContactInfo = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     useEffect(() => {
-        axios.get(`http://localhost:8000/abc/getContactData`)
+        axios.get(`${apiUrl}/getContactData`)
             .then(res => {
                 console.log(res.data)
                 setdata(res.data.data)

@@ -3,8 +3,9 @@ import axios from 'axios'
 import './Admin.css'
 import { Button, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-const Admin = () => {
 
+const Admin = () => {
+  const apiUrl = process.env.RENDER_API;
   const navigate = useNavigate();
   const [uname, setuname] = useState('');
   const [upass, setupass] = useState('');
@@ -12,7 +13,7 @@ const Admin = () => {
 
     event.preventDefault();
     event.stopPropagation();
-    axios.get(`http://localhost:8000/abc/adminlogin/${uname}/${upass}`)
+    axios.get(`${apiUrl}/adminlogin/${uname}/${upass}`)
       .then(res => {
         console.log(res.data.status);
         // setfname(res.data.name);
@@ -32,7 +33,7 @@ const Admin = () => {
       }
       )
       .catch(err => {
-        window.alert("username or password not matcheddddddd");
+        window.alert("Error in system");
         console.log(err);
         navigate('/');
       }
