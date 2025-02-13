@@ -19,4 +19,8 @@ app.get(('/'), (req, res) => {
     res.send("running at localhost:8000")
 })
 
-app.listen(8000, () => console.log("running at localhost:8000"))
+const PORT =  8000;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+});
+// app.listen(8000, () => console.log("running at localhost:8000"))
