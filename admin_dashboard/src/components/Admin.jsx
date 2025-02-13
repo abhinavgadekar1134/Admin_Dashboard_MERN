@@ -13,6 +13,7 @@ const Admin = () => {
 
     event.preventDefault();
     event.stopPropagation();
+    window.alert(`${apiUrl}/adminlogin/${uname}/${upass}`);
     axios.get(`${apiUrl}/adminlogin/${uname}/${upass}`)
       .then(res => {
         console.log(res.data.status);
