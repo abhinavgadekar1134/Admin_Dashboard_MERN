@@ -173,7 +173,7 @@ const Fooditems = () => {
                                             <tr>
                                                 <td>{ii.ID}</td>
                                                 {/* <td>{ii.foodimg}</td> */}
-                                                <td><img src={`http://localhost:8000/abc/`+ii.foodimg} width='200' height='120' alt="Food img" /></td>
+                                                <td><img src={`${apiUrl}`+ii.foodimg} width='200' height='120' alt="Food img" /></td>
                                                 <td>{ii.FoodName}</td>
                                                 <td>{ii.FoodType}</td>
                                                 <td>{ii.Price}</td>
